@@ -10,4 +10,10 @@
 
 @implementation ThreeVC
 
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
+}
+
 @end
