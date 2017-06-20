@@ -17,6 +17,7 @@
 		522C1B9F1EC2A97400DCBF50 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 522C1B9D1EC2A97400DCBF50 /* SecondVC.m */; };
 		522C1BA01EC2A97400DCBF50 /* SecondVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522C1B9E1EC2A97400DCBF50 /* SecondVC.xib */; };
 		522C1BA31EC315E900DCBF50 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 522C1BA21EC315E900DCBF50 /* FirstVC.m */; };
+		526B49C81EF904F100E384C1 /* ThreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 526B49C71EF904F100E384C1 /* ThreeVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		522C1B9E1EC2A97400DCBF50 /* SecondVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondVC.xib; sourceTree = "<group>"; };
 		522C1BA11EC315E900DCBF50 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		522C1BA21EC315E900DCBF50 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		526B49C61EF904F100E384C1 /* ThreeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeVC.h; sourceTree = "<group>"; };
+		526B49C71EF904F100E384C1 /* ThreeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeVC.m; sourceTree = "<group>"; };
 		848716000688E29C49F7CB54 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		FC7F095CA3A61AED888547CF /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		FFB761858425F5AF3586F473 /* Pods_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +128,8 @@
 				522C1BA21EC315E900DCBF50 /* FirstVC.m */,
 				522C1B9C1EC2A97400DCBF50 /* SecondVC.h */,
 				522C1B9D1EC2A97400DCBF50 /* SecondVC.m */,
+				526B49C61EF904F100E384C1 /* ThreeVC.h */,
+				526B49C71EF904F100E384C1 /* ThreeVC.m */,
 				522C1B9E1EC2A97400DCBF50 /* SecondVC.xib */,
 				522BBF471E8B4AAC00058952 /* Assets.xcassets */,
 				522BBF491E8B4AAC00058952 /* LaunchScreen.storyboard */,
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526B49C81EF904F100E384C1 /* ThreeVC.m in Sources */,
 				522BBF401E8B4AAC00058952 /* AppDelegate.m in Sources */,
 				522C1BA31EC315E900DCBF50 /* FirstVC.m in Sources */,
 				522C1B9F1EC2A97400DCBF50 /* SecondVC.m in Sources */,
