@@ -6,8 +6,8 @@
 //  Copyright © 2017年 bigiron. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface MapMainViewController : UIViewController
+@interface MapMainViewController : BaseViewController
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 bigiron. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface UserMainViewController : UIViewController
+@interface UserMainViewController : BaseViewController
 
 @end

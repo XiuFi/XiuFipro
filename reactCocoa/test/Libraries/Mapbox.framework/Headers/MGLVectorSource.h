@@ -14,7 +14,7 @@
  Initializes and returns a vector source from a remote url.
  
  @param sourceIdentifier The source identifier.
- @param URL A remote URL holding the vector source data.
+ @param url A remote URL holding the vector source data.
  
  @return An `MGLVectorSource`.
  */

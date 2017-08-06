@@ -93,7 +93,7 @@ extern NSString * const MGLGeoJSONToleranceOption;
  Initializes a source with the given identifier and GeoJSON data.
  
  @param sourceIdentifier A string that uniquely identifies the source.
- @param geoJSONData An NSData object representing GeoJSON source code.
+ @param data An NSData object representing GeoJSON source code.
  */
 - (instancetype)initWithSourceIdentifier:(NSString *)sourceIdentifier geoJSONData:(NSData *)data NS_DESIGNATED_INITIALIZER;
 
@@ -104,7 +104,7 @@ extern NSString * const MGLGeoJSONToleranceOption;
  style specification</a>.
  
  @param sourceIdentifier A string that uniquely identifies the source.
- @param geoJSONData An NSData object representing GeoJSON source code.
+ @param data An NSData object representing GeoJSON source code.
  @param options An NSDictionary of attributes for this source.
  */
 - (instancetype)initWithSourceIdentifier:(NSString *)sourceIdentifier geoJSONData:(NSData *)data options:(NS_DICTIONARY_OF(NSString *, id) *)options NS_DESIGNATED_INITIALIZER;
@@ -113,7 +113,7 @@ extern NSString * const MGLGeoJSONToleranceOption;
  Initializes a source with the given identifier and URL.
  
  @param sourceIdentifier A string that uniquely identifies the source.
- @param URL An HTTP(S) URL, absolute file URL, or local file URL relative to the
+ @param url An HTTP(S) URL, absolute file URL, or local file URL relative to the
     current application’s resource bundle.
  */
 - (instancetype)initWithSourceIdentifier:(NSString *)sourceIdentifier URL:(NSURL *)url NS_DESIGNATED_INITIALIZER;
@@ -125,7 +125,7 @@ extern NSString * const MGLGeoJSONToleranceOption;
  style specification</a>.
  
  @param sourceIdentifier A string that uniquely identifies the source.
- @param URL An HTTP(S) URL, absolute file URL, or local file URL relative to the
+ @param url An HTTP(S) URL, absolute file URL, or local file URL relative to the
     current application’s resource bundle.
  @param options An NSDictionary of attributes for this source.
  */
