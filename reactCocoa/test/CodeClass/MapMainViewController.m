@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UIButton *plusZoomLevelBtn;
 @property (strong, nonatomic) UIButton *reduceZoomLevelBtn;
 @property (strong, nonatomic) UIButton *userPositionBtn;
+@property (strong, nonatomic) UILabel *aaasdasda;
 
 @end
 
