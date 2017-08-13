@@ -10,8 +10,9 @@
 #import <Mapbox/Mapbox.h>
 #import "Masonry.h"
 #import "UIColor+Category.h"
+#import "AnnotationV.h"
 
-@interface MapMainViewController ()
+@interface MapMainViewController ()<MGLMapViewDelegate,MGLAnnotation>
 
 @property (strong, nonatomic) MGLMapView *mapView;
 @property (strong, nonatomic) UIButton *plusZoomLevelBtn;
@@ -32,10 +33,85 @@
     [self.view addSubview:self.plusZoomLevelBtn];
     [self.view addSubview:self.reduceZoomLevelBtn];
     [self.view addSubview:self.userPositionBtn];
+    self.mapView.delegate = self;
     
     [self initConstraints];
+    [self addAnnotationCoordinate];
+
+    UITapGestureRecognizer *tap =  [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(currentP:)];
+   
+    [self.mapView addGestureRecognizer:tap];
+
+}
+-(void)polyline{
+    
+    
+}
+//点击增加大头针
+-(void)currentP:(UITapGestureRecognizer *)tap{
+    CGPoint p = [self.mapView anchorPointForGesture:tap];
+    NSLog(@"%@,%@",tap,[NSValue valueWithCGPoint:p]);
+  CLLocationCoordinate2D lop =   [self.mapView convertPoint:p toCoordinateFromView:self.mapView];
+    NSLog(@"%@",[NSValue valueWithMGLCoordinate:lop ]);
+    MGLPointAnnotation *annocup = [[MGLPointAnnotation alloc]init];
+    annocup.coordinate = lop ;
+    [self.mapView addAnnotation:annocup];
 }
 
+-(void)addAnnotationCoordinate{
+   
+   // anno.frame = CGRectMake(0, 0, 100, 100);
+//    anno.backgroundColor = [UIColor blueColor];
+//    [anno setDragState:MGLAnnotationViewDragStateDragging animated:YES];
+//    anno.centerOffset =   CGVectorMake(0.6, 0.8);
+    MGLPointAnnotation *anno = [[MGLPointAnnotation alloc]init];
+    anno.coordinate = CLLocationCoordinate2DMake(23, 113);
+    MGLPointAnnotation *anno1 = [[MGLPointAnnotation alloc]init];
+    anno1.coordinate = CLLocationCoordinate2DMake(24, 113);
+    [self.mapView addAnnotation:anno];
+    [self.mapView addAnnotation:anno1];
+  //  [[MGLSource alloc]initWithSourceIdentifier:@"source"];
+  
+   CLLocationCoordinate2D l1 = CLLocationCoordinate2DMake(23,114);
+    CLLocationCoordinate2D l2 =CLLocationCoordinate2DMake(23, 115);
+//   NSArray *pointarr= [NSArray arrayWithObjects:(__bridge id _Nonnull)(&l1),&l2, nil];
+     MGLPolygon *polygon1 = [MGLPolygon polygonWithCoordinates:&l1 count:1];
+     MGLPolygon *polygon2 = [MGLPolygon polygonWithCoordinates:&l2 count:1];
+  NSArray *polygonArr=  [NSArray arrayWithObjects:polygon1, polygon2,nil];
+ //   NSArray *clcoorArr = [NSArray arrayWithObjects:&l1,&l2, nil];
+   MGLMultiPolyline *mulipolyLine = [MGLMultiPolyline multiPolylineWithPolylines:polygonArr];
+//    for (MGLPolygon lc in polygonArr) {
+//        <#statements#>
+//    }
+    MGLPolyline *polyLine = [MGLPolyline polylineWithCoordinates:(__bridge CLLocationCoordinate2D * _Nonnull)(polygon1) count:1];
+    
+    [self.mapView addOverlay:polyLine];
+   // [self.mapView.annotations arrayByAddingObject:anno];
+  
+}
+
+-(UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation{
+    
+    return [UIColor greenColor];
+}
+-(CGFloat)mapView:(MGLMapView *)mapView lineWidthForPolylineAnnotation:(MGLPolyline *)annotation{
+    NSLog(@"%@",annotation);
+    return 100.0;
+}
+//-(MGLAnnotationImage *)mapView:(MGLMapView *)mapView imageForAnnotation:(id<MGLAnnotation>)annotation{
+//     MGLAnnotationImage *anno = [MGLAnnotationImage annotationImageWithImage:[UIImage imageNamed:@"anno"] reuseIdentifier:@"reust"];
+//    return anno;
+//}
+//-(MGLAnnotationView *)mapView:(MGLMapView *)mapView viewForAnnotation:(id<MGLAnnotation>)annotation{
+//    
+//    AnnotationV *annoV = [[AnnotationV alloc]initWithReuseIdentifier:@"annotationV"];
+//    annoV.frame= CGRectMake(0, 0, 100, 100);
+//    annoV.backgroundColor = [UIColor greenColor];
+//   
+//    [annoV setDragState:MGLAnnotationViewDragStateStarting animated:YES];
+////    [self addAnnotationCoordinate];
+//    return annoV;
+//}
 #pragma mark private method
 - (void)initConstraints{
     [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -120,5 +196,31 @@
     }
     return _userPositionBtn;
 }
+//- (nullable MGLAnnotationView *)mapView:(nonnull MGLMapView *)mapView
+//                      viewForAnnotation:(nonnull id<MGLAnnotation>)annotation{
+//  
+////    MGLAnnotationView *annotationview = [[MGLAnnotationView alloc]initWithReuseIdentifier:@"annotation"];
+//    
+//    NSLog(@"%f,%f",annotation.coordinate.latitude,annotation.coordinate.longitude);
+////    MGLPointAnnotation *anno = [[MGLPointAnnotation alloc]init];
+////    anno.coordinate = CLLocationCoordinate2DMake(23, 113);
+////    MGLAnnotationView *annoV = [self.mapView viewForAnnotation:anno];
+////    [self.mapView addAnnotation:anno];
+//    return nil;
+//}
 
+
+- (void)mapView:(nonnull MGLMapView *)mapView
+didAddAnnotationViews:
+(nonnull NSArray<MGLAnnotationView *> *)annotationViews{
+    NSLog(@"didadd");
+}
+- (void)mapView:(nonnull MGLMapView *)mapView
+tapOnCalloutForAnnotation:(nonnull id<MGLAnnotation>)annotation{
+    
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+  
+    NSLog(@"touch");
+}
 @end
