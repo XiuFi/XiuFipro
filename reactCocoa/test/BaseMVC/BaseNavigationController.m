@@ -23,6 +23,7 @@
 
 #pragma mark UINavigationController delegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
     if (navigationController.viewControllers.count == 1) {
         [navigationController setNavigationBarHidden:true animated:true];
     }else{

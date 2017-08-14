@@ -1,6 +1,17 @@
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+#import "MGLFoundation.h"
 
 #pragma once
+
+#if TARGET_OS_IPHONE
+@class UIImage;
+#define MGLImage UIImage
+#else
+@class NSImage;
+#define MGLImage NSImage
+#endif
 
 #if TARGET_OS_IPHONE
 @class UIColor;
@@ -12,8 +23,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifndef NS_STRING_ENUM
+    #define NS_STRING_ENUM
+    #define NS_EXTENSIBLE_STRING_ENUM
+    typedef NSString *NSErrorDomain;
+    typedef NSString *NSNotificationName;
+#endif
+
 /** Indicates an error occurred in the Mapbox SDK. */
-extern NSString * const MGLErrorDomain;
+extern MGL_EXPORT NSErrorDomain const MGLErrorDomain;
 
 /** Error constants for the Mapbox SDK. */
 typedef NS_ENUM(NSInteger, MGLErrorCode) {
@@ -25,21 +43,10 @@ typedef NS_ENUM(NSInteger, MGLErrorCode) {
     MGLErrorCodeBadServerResponse = 2,
     /** An attempt to establish a connection failed. */
     MGLErrorCodeConnectionFailed = 3,
-};
-
-/**
- The mode used to track the user location on the map. Used with
- `MGLMapView.userTrackingMode`.
- */
-typedef NS_ENUM(NSUInteger, MGLUserTrackingMode) {
-    /** The map does not follow the user location. */
-    MGLUserTrackingModeNone              = 0,
-    /** The map follows the user location. */
-    MGLUserTrackingModeFollow,
-    /** The map follows the user location and rotates when the heading changes. */
-    MGLUserTrackingModeFollowWithHeading,
-    /** The map follows the user location and rotates when the course changes. */
-    MGLUserTrackingModeFollowWithCourse,
+    /** A style parse error occurred while attempting to load the map. */
+    MGLErrorCodeParseStyleFailed = 4,
+    /** An attempt to load the style failed. */
+    MGLErrorCodeLoadStyleFailed = 5,
 };
 
 /** Options for enabling debugging features in an `MGLMapView` instance. */
@@ -67,6 +74,39 @@ typedef NS_OPTIONS(NSUInteger, MGLMapDebugMaskOptions) {
     MGLMapDebugDepthBufferMask = 1 << 7,
 #endif
 };
+
+/**
+ A structure containing information about a transition.
+ */
+typedef struct __attribute__((objc_boxable)) MGLTransition {
+    /**
+     The amount of time the animation should take, not including the delay.
+     */
+    NSTimeInterval duration;
+    
+    /**
+     The amount of time in seconds to wait before beginning the animation.
+     */
+    NSTimeInterval delay;
+} MGLTransition;
+
+/**
+ Creates a new `MGLTransition` from the given duration and delay.
+ 
+ @param duration The amount of time the animation should take, not including 
+ the delay.
+ @param delay The amount of time in seconds to wait before beginning the 
+ animation.
+ 
+ @return Returns a `MGLTransition` struct containing the transition attributes.
+ */
+NS_INLINE MGLTransition MGLTransitionMake(NSTimeInterval duration, NSTimeInterval delay) {
+    MGLTransition transition;
+    transition.duration = duration;
+    transition.delay = delay;
+    
+    return transition;
+}
 
 NS_ASSUME_NONNULL_END
 

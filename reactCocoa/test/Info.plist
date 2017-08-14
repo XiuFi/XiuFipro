@@ -45,5 +45,7 @@
 	<string>pk.eyJ1IjoibHp5MTAxMCIsImEiOiJjaXF2czJiM3kwMDB1aTJtZ3BqdmtlYzdyIn0.-THIN4z92h03aLIB5ke6nA</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>访问位置信息</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<string>YES</string>
 </dict>
 </plist>

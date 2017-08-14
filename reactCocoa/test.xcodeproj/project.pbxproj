@@ -11,7 +11,6 @@
 		363B198F1F36EF6200F9CBE9 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B198E1F36EF6200F9CBE9 /* BaseTabBarController.m */; };
 		363B19911F36F10400F9CBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 363B19901F36F10400F9CBE9 /* Assets.xcassets */; };
 		363B19941F36F42400F9CBE9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B19931F36F42400F9CBE9 /* BaseViewController.m */; };
-		363B19981F36F47800F9CBE9 /* MapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B19971F36F47800F9CBE9 /* MapMainViewController.m */; };
 		363B199B1F36F48A00F9CBE9 /* UserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B199A1F36F48A00F9CBE9 /* UserMainViewController.m */; };
 		363B19A11F36FCD500F9CBE9 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 363B199D1F36F8F400F9CBE9 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		363B19A31F36FD6800F9CBE9 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363B199D1F36F8F400F9CBE9 /* Mapbox.framework */; };
@@ -27,6 +26,9 @@
 		363B19C71F3709F900F9CBE9 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B19BD1F3709F900F9CBE9 /* ViewController+MASAdditions.m */; };
 		363B19CB1F3712EB00F9CBE9 /* UIColor+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B19CA1F3712EB00F9CBE9 /* UIColor+Category.m */; };
 		363B19CE1F3722F800F9CBE9 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 363B19CD1F3722F800F9CBE9 /* BaseNavigationController.m */; };
+		36BB75BC1F406F3100BDC60E /* MapMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB75BB1F406F3100BDC60E /* MapMainViewController.m */; };
+		36BB75BF1F406F8400BDC60E /* MapMainViewController+drawInMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB75BE1F406F8400BDC60E /* MapMainViewController+drawInMapView.m */; };
+		36BB75C11F4070DD00BDC60E /* example.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 36BB75C01F4070DD00BDC60E /* example.geojson */; };
 		522BBF3D1E8B4AAC00058952 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 522BBF3C1E8B4AAC00058952 /* main.m */; };
 		522BBF401E8B4AAC00058952 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 522BBF3F1E8B4AAC00058952 /* AppDelegate.m */; };
 		522BBF4B1E8B4AAC00058952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522BBF491E8B4AAC00058952 /* LaunchScreen.storyboard */; };
@@ -71,8 +73,6 @@
 		363B19901F36F10400F9CBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		363B19921F36F42400F9CBE9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		363B19931F36F42400F9CBE9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		363B19961F36F47800F9CBE9 /* MapMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMainViewController.h; sourceTree = "<group>"; };
-		363B19971F36F47800F9CBE9 /* MapMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMainViewController.m; sourceTree = "<group>"; };
 		363B19991F36F48A00F9CBE9 /* UserMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMainViewController.h; sourceTree = "<group>"; };
 		363B199A1F36F48A00F9CBE9 /* UserMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMainViewController.m; sourceTree = "<group>"; };
 		363B199D1F36F8F400F9CBE9 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
@@ -105,6 +105,11 @@
 		363B19CA1F3712EB00F9CBE9 /* UIColor+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Category.m"; sourceTree = "<group>"; };
 		363B19CC1F3722F800F9CBE9 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		363B19CD1F3722F800F9CBE9 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		36BB75BA1F406F3100BDC60E /* MapMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMainViewController.h; sourceTree = "<group>"; };
+		36BB75BB1F406F3100BDC60E /* MapMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMainViewController.m; sourceTree = "<group>"; };
+		36BB75BD1F406F8400BDC60E /* MapMainViewController+drawInMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MapMainViewController+drawInMapView.h"; sourceTree = "<group>"; };
+		36BB75BE1F406F8400BDC60E /* MapMainViewController+drawInMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MapMainViewController+drawInMapView.m"; sourceTree = "<group>"; };
+		36BB75C01F4070DD00BDC60E /* example.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.geojson; sourceTree = "<group>"; };
 		522BBF381E8B4AAC00058952 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		522BBF3C1E8B4AAC00058952 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		522BBF3E1E8B4AAC00058952 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,8 +178,7 @@
 		363B19951F36F44700F9CBE9 /* CodeClass */ = {
 			isa = PBXGroup;
 			children = (
-				363B19961F36F47800F9CBE9 /* MapMainViewController.h */,
-				363B19971F36F47800F9CBE9 /* MapMainViewController.m */,
+				36BB75B81F406F3100BDC60E /* MapViewMVC */,
 				363B19991F36F48A00F9CBE9 /* UserMainViewController.h */,
 				363B199A1F36F48A00F9CBE9 /* UserMainViewController.m */,
 			);
@@ -231,6 +235,25 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		36BB75B81F406F3100BDC60E /* MapViewMVC */ = {
+			isa = PBXGroup;
+			children = (
+				36BB75B91F406F3100BDC60E /* mainViewDelegate */,
+				36BB75BA1F406F3100BDC60E /* MapMainViewController.h */,
+				36BB75BB1F406F3100BDC60E /* MapMainViewController.m */,
+			);
+			path = MapViewMVC;
+			sourceTree = "<group>";
+		};
+		36BB75B91F406F3100BDC60E /* mainViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				36BB75BD1F406F8400BDC60E /* MapMainViewController+drawInMapView.h */,
+				36BB75BE1F406F8400BDC60E /* MapMainViewController+drawInMapView.m */,
+			);
+			path = mainViewDelegate;
+			sourceTree = "<group>";
+		};
 		522BBF2F1E8B4AAC00058952 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +285,7 @@
 				363B19861F36EDCB00F9CBE9 /* BaseMVC */,
 				522BBF3E1E8B4AAC00058952 /* AppDelegate.h */,
 				522BBF3F1E8B4AAC00058952 /* AppDelegate.m */,
+				36BB75C01F4070DD00BDC60E /* example.geojson */,
 				363B19901F36F10400F9CBE9 /* Assets.xcassets */,
 				522BBF491E8B4AAC00058952 /* LaunchScreen.storyboard */,
 				522BBF4C1E8B4AAC00058952 /* Info.plist */,
@@ -417,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				363B19911F36F10400F9CBE9 /* Assets.xcassets in Resources */,
+				36BB75C11F4070DD00BDC60E /* example.geojson in Resources */,
 				522BBF4B1E8B4AAC00058952 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,18 +518,19 @@
 				363B19BF1F3709F900F9CBE9 /* MASConstraint.m in Sources */,
 				363B19C21F3709F900F9CBE9 /* MASViewAttribute.m in Sources */,
 				363B19C71F3709F900F9CBE9 /* ViewController+MASAdditions.m in Sources */,
+				36BB75BF1F406F8400BDC60E /* MapMainViewController+drawInMapView.m in Sources */,
 				363B19C41F3709F900F9CBE9 /* NSArray+MASAdditions.m in Sources */,
 				363B199B1F36F48A00F9CBE9 /* UserMainViewController.m in Sources */,
 				363B19C31F3709F900F9CBE9 /* MASViewConstraint.m in Sources */,
 				363B19C11F3709F900F9CBE9 /* MASLayoutConstraint.m in Sources */,
 				363B198F1F36EF6200F9CBE9 /* BaseTabBarController.m in Sources */,
-				363B19981F36F47800F9CBE9 /* MapMainViewController.m in Sources */,
 				363B19C61F3709F900F9CBE9 /* View+MASAdditions.m in Sources */,
 				363B19BE1F3709F900F9CBE9 /* MASCompositeConstraint.m in Sources */,
 				363B19C51F3709F900F9CBE9 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				363B19C01F3709F900F9CBE9 /* MASConstraintMaker.m in Sources */,
 				363B19941F36F42400F9CBE9 /* BaseViewController.m in Sources */,
 				363B19CE1F3722F800F9CBE9 /* BaseNavigationController.m in Sources */,
+				36BB75BC1F406F3100BDC60E /* MapMainViewController.m in Sources */,
 				522BBF401E8B4AAC00058952 /* AppDelegate.m in Sources */,
 				522BBF3D1E8B4AAC00058952 /* main.m in Sources */,
 				363B19CB1F3712EB00F9CBE9 /* UIColor+Category.m in Sources */,
