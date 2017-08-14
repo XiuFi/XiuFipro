@@ -47,7 +47,9 @@
     // Set the line width for polyline annotations
     return 10.0f;
 }
-
+-(UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation{
+    return [UIColor grayColor];
+}
 //- (UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation {
 //    // Set the stroke color for shape annotations
 //    // ... but give our polyline a unique color by checking for its `title` property
