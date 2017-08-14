@@ -235,9 +235,17 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		369AD1701F41436800160B87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		36BB75B81F406F3100BDC60E /* MapViewMVC */ = {
 			isa = PBXGroup;
 			children = (
+				369AD1701F41436800160B87 /* Views */,
 				36BB75B91F406F3100BDC60E /* mainViewDelegate */,
 				36BB75BA1F406F3100BDC60E /* MapMainViewController.h */,
 				36BB75BB1F406F3100BDC60E /* MapMainViewController.m */,

@@ -1286,6 +1286,7 @@ MGL_EXPORT IB_DESIGNABLE
  @return An array of objects conforming to the `MGLFeature` protocol that
     represent features in the sources used by the current style.
  */
+
 - (NS_ARRAY_OF(id <MGLFeature>) *)visibleFeaturesInRect:(CGRect)rect inStyleLayersWithIdentifiers:(nullable NS_SET_OF(NSString *) *)styleLayerIdentifiers NS_SWIFT_NAME(visibleFeatures(in:styleLayerIdentifiers:));
 
 /**
@@ -1358,8 +1359,8 @@ MGL_EXPORT IB_DESIGNABLE
  @return An array of objects conforming to the `MGLFeature` protocol that
     represent features in the sources used by the current style.
  */
-- (NS_ */
-ARRAY_OF(id <MGLFeature>) *)visibleFeaturesInRect:(CGRect)rect inStyleLayersWithIdentifiers:(nullable NS_SET_OF(NSString *) *)styleLayerIdentifiers predicate:(nullable NSPredicate *)predicate NS_SWIFT_NAME(visibleFeatures(in:styleLayerIdentifiers:predicate:));
+
+- (NS_ARRAY_OF(id <MGLFeature>) *)visibleFeaturesInRect:(CGRect)rect inStyleLayersWithIdentifiers:(nullable NS_SET_OF(NSString *) *)styleLayerIdentifiers predicate:(nullable NSPredicate *)predicate NS_SWIFT_NAME(visibleFeatures(in:styleLayerIdentifiers:predicate:));
 
 #pragma mark Debugging the Map
 
@@ -1368,6 +1369,7 @@ ARRAY_OF(id <MGLFeature>) *)visibleFeaturesInRect:(CGRect)rect inStyleLayersWith
 
  These options are all disabled by default and should remain disabled in
  released software for performance and aesthetic reasons.
+ */
 @property (nonatomic) MGLMapDebugMaskOptions debugMask;
 
 @property (nonatomic, getter=isDebugActive) BOOL debugActive __attribute__((deprecated("Use -debugMask and -setDebugMask:.")));

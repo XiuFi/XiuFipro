@@ -39,19 +39,6 @@
     
 }
 
-#pragma mark touches
-- (void)tap:(UITapGestureRecognizer *)tapGesture{
-    CGPoint tapPoint = [_mapView anchorPointForGesture:tapGesture];
-    
-    CLLocationCoordinate2D touchCoordinate = [self.mapView convertPoint:tapPoint toCoordinateFromView:_mapView];
-    MGLPointAnnotation *pointAnnotation = [[MGLPointAnnotation alloc] init];
-    pointAnnotation.coordinate = touchCoordinate;
-    pointAnnotation.title = @"shadiao";
-    pointAnnotation.subtitle = @"zhizhang";
-    
-    [_mapView addAnnotation:pointAnnotation];
-}
-
 #pragma mark private method
 - (void)initConstraints{
     [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,6 +78,18 @@
 - (void)centerUserPosition{
     CLLocationCoordinate2D userLocaltion2D = _mapView.userLocation.location.coordinate;
     [_mapView setCenterCoordinate:userLocaltion2D zoomLevel:8 animated:true];
+}
+
+- (void)tap:(UITapGestureRecognizer *)tapGesture{
+    CGPoint tapPoint = [_mapView anchorPointForGesture:tapGesture];
+    
+    CLLocationCoordinate2D touchCoordinate = [self.mapView convertPoint:tapPoint toCoordinateFromView:_mapView];
+    MGLPointAnnotation *pointAnnotation = [[MGLPointAnnotation alloc] init];
+    pointAnnotation.coordinate = touchCoordinate;
+    pointAnnotation.title = @"shadiao";
+    pointAnnotation.subtitle = @"zhizhang";
+    
+    [_mapView addAnnotation:pointAnnotation];
 }
 
 #pragma mark set/get
