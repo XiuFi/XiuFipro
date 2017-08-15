@@ -16,12 +16,20 @@
 @property (strong, nonatomic) UIButton *plusZoomLevelBtn;
 @property (strong, nonatomic) UIButton *reduceZoomLevelBtn;
 @property (strong, nonatomic) UIButton *userPositionBtn;
+<<<<<<< HEAD
 //line四个方法
 @property(nonatomic,strong)UIButton *makelineBtn;
 @property(nonatomic,strong)MGLPolyline *routeLine;
 @property(nonatomic,assign)BOOL isMakeLine;
 @property(nonatomic,strong)NSMutableArray *lineArr;
 
+=======
+//画直线用到的四个属性
+@property(nonatomic,strong)UIButton *makeLineBtn;
+@property(nonatomic,strong)MGLPolyline *routeLine;
+@property(nonatomic,assign)BOOL isMakeLine;
+@property(nonatomic,strong)NSMutableArray *lineArr;
+>>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
 @end
 
 #define USERDEFAULT [NSUserDefaults standardUserDefaults]
@@ -36,16 +44,25 @@
     [self.view addSubview:self.plusZoomLevelBtn];
     [self.view addSubview:self.reduceZoomLevelBtn];
     [self.view addSubview:self.userPositionBtn];
+<<<<<<< HEAD
     [self.view addSubview:self.makelineBtn];
     self.isMakeLine = NO;
 
     [self initConstraints];
     [self drawPolyline];
     [self drawTestLine];
+=======
+    [self.view addSubview:self.makeLineBtn];
+    self.isMakeLine = NO;
+    [self initConstraints];
+    [self drawPolyline];
+    [self addAnnotationCoordinate];
+>>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self.view addGestureRecognizer:tapGesture];
     
 }
+<<<<<<< HEAD
 #pragma mark - 画直线
 -(void)makeline{
     self.isMakeLine = !self.isMakeLine;
@@ -57,6 +74,20 @@
     NSArray *array = [NSArray arrayWithObjects:location0, location1, nil];
     [self drawLineWithLocationArray:array];
 }
+=======
+#pragma mark 画直线的方法
+-(void)drawLineWithTowPoint{
+    self.isMakeLine = ! self.isMakeLine;
+}
+-(void)addAnnotationCoordinate{
+    
+    CLLocation *location0 = [[CLLocation alloc] initWithLatitude:23 longitude:113.43434];
+    CLLocation *location1 = [[CLLocation alloc] initWithLatitude:25 longitude:114.2340];
+    NSArray *array = [NSArray arrayWithObjects:location0, location1, nil];
+    [self drawLineWithLocationArray:array];
+}
+
+>>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
 - (void)drawLineWithLocationArray:(NSArray *)locationArray
 {
     long pointCount = [locationArray count];
@@ -96,12 +127,20 @@
         make.right.equalTo(self.view).mas_offset(-10);
         make.height.with.mas_equalTo(24);
     }];
+<<<<<<< HEAD
     [_makelineBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(20);
         make.right.equalTo(self.view.mas_right).offset(-10);
         
     }];
     
+=======
+    [_makeLineBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(20);
+        make.right.equalTo(self.view.mas_right).offset(-10);
+        make.height.with.mas_equalTo(24);
+    }];
+>>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
     
 }
 
@@ -134,6 +173,7 @@
         CGPoint tapPoint = [_mapView anchorPointForGesture:tapGesture];
         
         CLLocationCoordinate2D touchCoordinate = [self.mapView convertPoint:tapPoint toCoordinateFromView:_mapView];
+<<<<<<< HEAD
         CLLocation *location = [[CLLocation alloc] initWithLatitude:touchCoordinate.latitude longitude:touchCoordinate.longitude];
         [self.lineArr addObject:location];
         if (_lineArr.count == 2) {
@@ -144,6 +184,21 @@
       
     }
     
+=======
+        
+        CLLocation *location0 = [[CLLocation alloc] initWithLatitude:touchCoordinate.latitude longitude:touchCoordinate.longitude];
+       
+        [self.lineArr addObject:location0];
+        if (self.lineArr.count == 2) {
+              [self drawLineWithLocationArray:self.lineArr];
+            self.isMakeLine = NO;
+            [self.lineArr removeAllObjects];
+        }
+      
+        
+    }
+   
+>>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
 }
 
 #pragma mark set/get
@@ -196,6 +251,7 @@
     }
     return _userPositionBtn;
 }
+<<<<<<< HEAD
 -(UIButton *)makelineBtn{
     if (!_makelineBtn) {
         _makelineBtn = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -205,6 +261,17 @@
         [_makelineBtn addTarget:self action:@selector(makeline) forControlEvents:UIControlEventTouchUpInside];
     }
     return _makelineBtn;
+=======
+-(UIButton *)makeLineBtn{
+    if (!_makeLineBtn) {
+        _makeLineBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_makeLineBtn setBackgroundColor:[UIColor colorWithHexString:@"#4588F5"]];
+        [_makeLineBtn setTitleColor:[UIColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
+        [_makeLineBtn setTitle:@"画直线" forState:UIControlStateNormal];
+        [_makeLineBtn addTarget:self action:@selector(drawLineWithTowPoint) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _makeLineBtn;
+>>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
 }
 -(NSMutableArray *)lineArr{
     if (!_lineArr) {
