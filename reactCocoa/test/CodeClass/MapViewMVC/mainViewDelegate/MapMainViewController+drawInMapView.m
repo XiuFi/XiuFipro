@@ -50,10 +50,7 @@
 -(UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation{
     return [UIColor grayColor];
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> e9488e3bd5aac5849fd24175b3860f7817c8884a
 //- (UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation {
 //    // Set the stroke color for shape annotations
 //    // ... but give our polyline a unique color by checking for its `title` property
