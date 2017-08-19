@@ -32,7 +32,7 @@
 #pragma mark lifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.makelineBtn];
+    [self.view addSubview:self.makeLineBtn];
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.plusZoomLevelBtn];
     [self.view addSubview:self.reduceZoomLevelBtn];
